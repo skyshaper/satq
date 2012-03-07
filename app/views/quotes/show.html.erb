@@ -1,9 +1,1 @@
-<p id="notice"><%= notice %></p>
-
-<% @quote.lines.each do |line| %>
-  <strong>&lt;<%= line.person.name %>&gt;</strong>
-  <%= line.body %><br />
-<% end %>
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+<%= render @quote %>

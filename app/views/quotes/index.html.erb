@@ -1,20 +1,7 @@
-<h1>Listing quotes</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @quotes.each do |quote| %>
-  <tr>
-    <td><%= link_to 'Show', quote %></td>
-    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-    <td><%= link_to 'Destroy', quote, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<h1>#<%= quote.id %></h1>
+<%= render quote %>
 <% end %>
-</table>
 
 <br />
 
