@@ -1,4 +1,12 @@
-<%= render 'form' %>
+<%= form_tag(@quote, method: :put) do %>
+<% raw_quote = @quote.lines.map { |x| "<#{x.person.name}> #{x.body}"}.join("\n") %>
+<div>
+  <%= text_area_tag :raw_quote, raw_quote, rows: 10, cols: 70 %>
+</div>
+<div>
+  <%= submit_tag 'Save quote' %>
+</div>
+<% end %>
 
-<%= link_to 'Show', @quote %> |
-<%= link_to 'Back', quotes_path %>
+<%= link_to 'Show quote', @quote %> |
+<%= link_to 'Show all quotes', quotes_path %>
