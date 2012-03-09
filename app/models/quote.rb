@@ -10,7 +10,7 @@ class Quote < ActiveRecord::Base
     Quote.new(lines: lines)
   end
   
-  def replace_with_raw_quote(raw_quote)
+  def replace_with_raw_quote!(raw_quote)
     self.lines = raw_quote.lines.map do |raw_line|
       Line.from_raw_line(raw_line)
     end
