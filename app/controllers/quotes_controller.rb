@@ -63,7 +63,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.replace_with_raw_quote!(params[:raw_quote])
-        format.html { redirect_to @quote, notice: 'Quote was successfully updated.' }
+        format.html { redirect_to @quote }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
