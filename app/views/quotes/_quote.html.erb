@@ -1,12 +1,14 @@
 <div class="quote">
   <h1 class="number"><%= link_to "\##{quote.id}", quote %></h1>
   
-  <div class="body">
-    <% quote.lines.each do |line| %>
-      &lt;<%= line.person.name %>&gt;
-      <%= line.body %><br>
-    <% end %>
-  </div>
+  <table class="lines">
+    
+    <% quote.lines.each do |line| %><tr>
+      <td class="person"><%= line.person.name %></td>
+      <td class="body"><%= line.body %></td>
+    </tr><% end %>
+    
+  </table>
   
   <div class="actions">
     <%= link_to 'Edit', edit_quote_path(quote) %> |
