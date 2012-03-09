@@ -1,9 +1,4 @@
 class QuotesController < ApplicationController
-  LINE_PATTERNS = [
-    /<\s*([^>]+)\s*>\s*(.*)$/,
-    /([^:]+):\s*(.*)$/
-  ]
-  
   # GET /quotes
   # GET /quotes.json
   def index
@@ -48,18 +43,7 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     raw_quote = params[:raw_quote]    
-    @quote = Quote.new
-    @quote.save
-    raw_quote.each_line do |raw_line|
-      LINE_PATTERNS.each do |pattern|
-        if raw_line =~ pattern
-          person = Person.find_or_create_by_name($1)
-          puts $1, $2
-          @quote.lines.create(person: person, body: $2)
-          break
-        end
-      end
-    end
+    @quote = Quote.from_raw_quote(raw_quote)
 
     respond_to do |format|
       if @quote.save
