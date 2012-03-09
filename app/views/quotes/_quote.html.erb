@@ -1,12 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p><strong>People:</strong> <%= quote.people.map(&:name).join(' ') %></p>
-
-<% quote.lines.each do |line| %>
-  <strong>&lt;<%= line.person.name %>&gt;</strong>
-  <%= line.body %><br />
-<% end %>
-
-<%= link_to 'Edit', edit_quote_path(quote) %> |
-<%= link_to 'Destroy', quote, confirm: 'Are you sure?', method: :delete %>
-<%= link_to 'Back', quotes_path %>
+<div class="quote">
+  <h1 class="number"><%= link_to "\##{quote.id}", quote %></h1>
+  
+  <div class="body">
+    <% quote.lines.each do |line| %>
+      &lt;<%= line.person.name %>&gt;
+      <%= line.body %><br>
+    <% end %>
+  </div>
+  
+  <div class="actions">
+    <%= link_to 'Edit', edit_quote_path(quote) %> |
+    <%= link_to 'Delete', quote, confirm: 'Are you sure?', method: :delete %>
+  </div>
+  <div style="clear: right;"></div>
+</div>

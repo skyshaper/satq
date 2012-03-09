@@ -1,8 +1,8 @@
 <%= form_tag('/quotes') do %>
 <div>
-  <%= text_area_tag :raw_quote, params[:raw_quote], rows: 10, cols: 80 %>
+  <%= text_area_tag :raw_quote, params[:raw_quote], rows: 10, cols: 70 %>
 </div>
 <div>
-  <%= submit_tag 'Save' %>
+  <%= submit_tag 'Add quote' %>
 </div>
 <% end %>

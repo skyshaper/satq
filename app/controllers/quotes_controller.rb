@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all
+    @quotes = Quote.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb

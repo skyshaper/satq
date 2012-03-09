@@ -1,8 +1,7 @@
+<p class="action"><%= link_to 'Add quote', new_quote_path %></p>
+
 <% @quotes.each do |quote| %>
-<h1>#<%= quote.id %></h1>
 <%= render quote %>
 <% end %>
 
 <br />
-
-<%= link_to 'New Quote', new_quote_path %>
