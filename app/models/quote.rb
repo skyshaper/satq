@@ -1,5 +1,5 @@
 class Quote < ActiveRecord::Base
-  has_many :lines
+  has_many :lines, dependent: :destroy, autosave: true
   has_many :people, through: :lines, uniq: true
   
   def self.from_raw_quote(raw_quote)
