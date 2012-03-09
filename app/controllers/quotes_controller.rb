@@ -56,6 +56,7 @@ class QuotesController < ApplicationController
           person = Person.find_or_create_by_name($1)
           puts $1, $2
           @quote.lines.create(person: person, body: $2)
+          break
         end
       end
     end
