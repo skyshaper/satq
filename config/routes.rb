@@ -1,5 +1,6 @@
 Satq::Application.routes.draw do
   resources :quotes
+  match 'quotes/person/:person' => 'quotes#person', via: :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

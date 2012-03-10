@@ -9,6 +9,19 @@ class QuotesController < ApplicationController
       format.json { render json: @quotes }
     end
   end
+  
+  # GET /quotes/person/foo
+  # GET /quotes/person/foo.json
+  def person
+    @person = Person.find_by_name(params[:person])
+    @quotes = @person.quotes.order('created_at DESC')
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @quotes }
+    end
+  end
+
 
   # GET /quotes/1
   # GET /quotes/1.json

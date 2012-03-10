@@ -1,7 +1,9 @@
-<p class="action"><%= link_to 'Add quote', new_quote_path %></p>
+<p class="action"><%= link_to 'Add quote', new_quote_path %>
+
+	<% if @person %>| <%= link_to 'Show all quotes', quotes_path %><% end %>
+
+</p>
 
 <% @quotes.each do |quote| %>
 <%= render quote %>
 <% end %>
-
-<br />

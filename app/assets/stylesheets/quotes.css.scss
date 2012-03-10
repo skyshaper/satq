@@ -16,8 +16,10 @@ body {
 a {
   color: black;
   text-decoration: none;
-  font-variant: small-caps;
+}
 
+.actions, .action {
+  font-variant: small-caps;
 }
 
 a:hover {
@@ -57,7 +59,7 @@ input {
   }
   
   .person {
-	  vertical-align: top;
+	vertical-align: top;
     font-weight: bold;
     padding-right: 1.25em;
     text-align: right;

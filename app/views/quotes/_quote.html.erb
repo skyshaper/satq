@@ -4,7 +4,7 @@
   <table class="lines">
     
     <% quote.lines.each do |line| %><tr>
-      <td class="person"><%= line.person.name %></td>
+      <td class="person"><a href="/quotes/person/<%= line.person.name %>"><%= line.person.name %></a></td>
       <td class="body"><%= line.body %></td>
     </tr><% end %>
     

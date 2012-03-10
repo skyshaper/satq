@@ -1,6 +1,6 @@
 class Person < ActiveRecord::Base
   has_many :lines
-  has_many :quotes, through: :lines
+  has_many :quotes, through: :lines, uniq: true
   
   validates :name, presence: true
   validates :name, uniqueness: true
