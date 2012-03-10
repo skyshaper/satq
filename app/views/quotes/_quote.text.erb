@@ -1,0 +1,7 @@
+<% @quote.lines.each do |line| %>
+<% if line.action? %>
+* <%= line.person.name %> <%= line.body %>
+<% else %>
+<<%= line.person.name %>> <%= line.body %>
+<% end %>
+<% end %>

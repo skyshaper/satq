@@ -1,5 +1,8 @@
+<% 
+  raw_quote = render(partial: 'quote', formats: [:text])
+ %>
+
 <%= form_tag(@quote, method: :put) do %>
-<% raw_quote = @quote.lines.map { |x| "<#{x.person.name}> #{x.body}"}.join("\n") %>
 <div>
   <%= text_area_tag :raw_quote, raw_quote, rows: 10, cols: 70 %>
 </div>

@@ -11,15 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306194553) do
+ActiveRecord::Schema.define(:version => 20120310093648) do
 
-  create_table "lines", :force => true do |t|
-    t.integer  "person_id"
-    t.integer  "quote_id"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+# Could not dump table "lines" because of following StandardError
+#   Unknown type 'bool' for column 'action'
 
   create_table "people", :force => true do |t|
     t.string   "name"

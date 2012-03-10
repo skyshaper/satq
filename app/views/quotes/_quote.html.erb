@@ -3,14 +3,22 @@
   
   <table class="lines">
     
-    <% quote.lines.each do |line| %><tr>
+    <% quote.lines.each do |line| %>
+      <% if line.action? %>
+        <tr class="action">
+      <% else %>
+        <tr class="message">
+      <% end %>
+      
       <td class="person"><a href="/quotes/person/<%= line.person.name %>"><%= line.person.name %></a></td>
       <td class="body"><%= line.body %></td>
-    </tr><% end %>
+      
+      </tr>
+    <% end %>
     
   </table>
   
-  <div class="actions">
+  <div class="links">
     <%= link_to 'Edit', edit_quote_path(quote) %> |
     <%= link_to 'Delete', quote, confirm: 'Are you sure?', method: :delete %>
   </div>
