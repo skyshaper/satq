@@ -2,7 +2,7 @@ class Line < ActiveRecord::Base
   belongs_to :person
   belongs_to :quote
   
-  validates :person, :body, presence: true
+  validates :person, presence: true
   
   PATTERNS = [
     [ /<\s*([^>]+)\s*>\s*(.*)$/, false ],
