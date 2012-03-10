@@ -8,7 +8,7 @@ class Line < ActiveRecord::Base
     [ /<\s*([^>]+)\s*>\s*(.*)$/, false ],
     [ /\*\s+([^\s]+)\s*(.*)$/,   true ],
     [ /([^:]+):\s*(.*)$/,        false ],
-    [ /^([^\s]+)\s*(.*)$/,       true ],
+    [ /([^\s]+)\s*(.*)$/,        true ],
   ]
   
   def self.from_raw_line(raw_line)
