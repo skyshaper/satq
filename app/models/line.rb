@@ -26,5 +26,6 @@ class Line < ActiveRecord::Base
         return Line.new(person: person, body: $2, action: true)
       end
     end
+    raise Exception.new("Failed to parse #{raw_line}")
   end
 end
