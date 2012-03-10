@@ -13,8 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20120310093648) do
 
-# Could not dump table "lines" because of following StandardError
-#   Unknown type 'bool' for column 'action'
+  create_table "lines", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "quote_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "action"
+  end
 
   create_table "people", :force => true do |t|
     t.string   "name"
