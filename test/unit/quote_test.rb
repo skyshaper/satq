@@ -7,15 +7,19 @@ class QuoteTest < ActiveSupport::TestCase
     assert_equal 'Bar', quote.lines[0].body
     assert_equal 'bar', quote.lines[1].person.name
     assert_equal 'Spam', quote.lines[1].body
+    assert_equal false, quote.lines[0].action
   end
   
   test "parse IRC format" do
-    quote = Quote.from_raw_quote("<foo>Bar\n<bar>Spam")
+    quote = Quote.from_raw_quote("<foo>Bar\n* bar Spam")
     assert_quote quote
+    assert_equal true, quote.lines[1].action
   end
+
   
   test "parse conversation format" do
     quote = Quote.from_raw_quote("foo: Bar\nbar: Spam")
     assert_quote quote
+    assert_equal false, quote.lines[1].action
   end
 end
