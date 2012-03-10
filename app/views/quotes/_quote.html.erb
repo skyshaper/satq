@@ -11,7 +11,7 @@
       <% end %>
       
       <td class="person"><a href="/quotes/person/<%= line.person.name %>"><%= line.person.name %></a></td>
-      <td class="body"><%= line.body %></td>
+      <td class="body"><%= auto_link(line.body) %></td>
       
       </tr>
     <% end %>

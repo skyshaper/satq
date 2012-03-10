@@ -71,6 +71,8 @@ GEM
       activesupport (= 3.2.0)
       bundler (~> 1.0)
       railties (= 3.2.0)
+    rails_autolink (1.0.5)
+      rails (~> 3.1)
     railties (3.2.0)
       actionpack (= 3.2.0)
       activesupport (= 3.2.0)
@@ -111,6 +113,7 @@ DEPENDENCIES
   jquery-rails
   nokogiri
   rails (= 3.2.0)
+  rails_autolink
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer

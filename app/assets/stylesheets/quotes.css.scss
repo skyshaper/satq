@@ -53,9 +53,12 @@ input {
   }
  
   .lines td, textarea {
+    margin: 0.5em;
+  }
+  
+  .lines td, .lines td a, textarea {
     font-family: 'PT Mono', monospace;
     font-size: 11pt;
-    margin: 0.5em;
   }
   
   .lines .action {
