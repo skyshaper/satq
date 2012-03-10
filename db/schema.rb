@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310093648) do
+ActiveRecord::Schema.define(:version => 20120310173155) do
 
   create_table "lines", :force => true do |t|
     t.integer  "person_id"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20120310093648) do
     t.datetime "updated_at", :null => false
     t.boolean  "action"
   end
+
+  add_index "lines", ["person_id"], :name => "index_lines_on_person_id"
+  add_index "lines", ["quote_id"], :name => "index_lines_on_quote_id"
 
   create_table "people", :force => true do |t|
     t.string   "name"
