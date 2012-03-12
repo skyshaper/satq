@@ -57,8 +57,7 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    raw_quote = params[:raw_quote]    
-    @quote = Quote.from_raw_quote(raw_quote)
+    @quote = Quote.from_raw_quote(params[:raw_quote], params[:description])
 
     respond_to do |format|
       if @quote.save
@@ -78,7 +77,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
 
     respond_to do |format|
-      if @quote.replace_with_raw_quote!(params[:raw_quote])
+      if @quote.replace_with_raw_quote!(params[:raw_quote], params[:description])
         expire_action action: :index
         format.html { redirect_to @quote }
         format.json { head :no_content }

@@ -3,6 +3,10 @@
   <%= text_area_tag :raw_quote, params[:raw_quote], rows: 10, cols: 70 %>
 </div>
 <div>
+  <%= label_tag 'Optional description:' %>
+  <%= text_area_tag :description, params[:description], rows: 2, cols: 70 %>
+</div>
+<div>
   <%= submit_tag 'Add quote' %>
 </div>
 <% end %>
