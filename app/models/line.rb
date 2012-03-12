@@ -11,12 +11,22 @@ class Line < ActiveRecord::Base
     [ /([^\s]+)\s*(.*)$/,        true ],
   ]
   
-  def self.from_raw_line(raw_line)
+  def raw_line
+    if action? 
+      "* #{person.name} #{body}"
+    else
+      "<#{person.name}> #{body}"
+    end    
+  end
+  
+  def raw_line=(raw_line)
     PATTERNS.each do |pattern|
       regex, action = pattern
       if raw_line =~ regex
-        person = Person.find_or_create_by_name($1)
-        return Line.new(person: person, body: $2, action: action)
+        self.person = Person.find_or_create_by_name($1)
+        self.body = $2
+        self.action = action
+        return
       end
     end
     raise Exception.new("Failed to parse #{raw_line}")

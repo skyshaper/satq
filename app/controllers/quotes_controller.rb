@@ -33,7 +33,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.text
+      format.text { render text: @quote.raw_quote }
       format.json { render json: @quote }
     end
   end
@@ -57,7 +57,7 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = Quote.from_raw_quote(params[:raw_quote], params[:description])
+    @quote = Quote.new(params[:quote])
 
     respond_to do |format|
       if @quote.save
@@ -77,7 +77,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
 
     respond_to do |format|
-      if @quote.replace_with_raw_quote!(params[:raw_quote], params[:description])
+      if @quote.update_attributes(params[:quote])
         expire_action action: :index
         format.html { redirect_to @quote }
         format.json { head :no_content }
