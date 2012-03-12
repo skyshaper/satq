@@ -11,7 +11,7 @@ class Quote < ActiveRecord::Base
   end
   
   def replace_with_raw_quote!(raw_quote, new_description)
-    self.description = new_description
+    update_attribute(:description, new_description)
 
     self.lines = raw_quote.lines.map do |raw_line|
       Line.from_raw_line(raw_line)
