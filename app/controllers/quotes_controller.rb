@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  caches_page :index
+  caches_page :index, :person, :show
 
   # GET /quotes
   # GET /quotes.json
@@ -62,6 +62,7 @@ class QuotesController < ApplicationController
     respond_to do |format|
       if @quote.save
         expire_page action: :index
+        expire_page action: :person
         format.html { redirect_to @quote }
         format.json { render json: @quote, status: :created, location: @quote }
       else
@@ -79,6 +80,8 @@ class QuotesController < ApplicationController
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
         expire_page action: :index
+        expire_page action: :person
+        expire_page action: :show
         format.html { redirect_to @quote }
         format.json { head :no_content }
       else
@@ -96,6 +99,8 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       expire_page action: :index
+      expire_page action: :person
+      expire_page action: :show
       format.html { redirect_to quotes_url }
       format.json { head :no_content }
     end
