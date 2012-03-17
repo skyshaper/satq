@@ -2,7 +2,7 @@
 app_path = "/srv/satq/current"
 
 # Set unicorn options
-worker_processes 1
+worker_processes 4
 preload_app true
 timeout 180
 listen "127.0.0.1:8080"
