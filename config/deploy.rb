@@ -34,3 +34,6 @@ set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
+
+require 'capistrano-unicorn'
+
