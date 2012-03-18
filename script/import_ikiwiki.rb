@@ -1,12 +1,18 @@
 require "nokogiri"
 
-doc = Nokogiri::HTML($stdin)
-doc.css('#content p').each do |p|
-  begin
-    quote = Quote.new(raw_quote: p.content)
-    quote.save!
-  rescue Exception => e
-    puts p.content
-    puts e
+def parse(file, filter)
+  doc = Nokogiri::HTML(open(file))
+  doc.css(filter).each do |p|
+    begin
+      quote = Quote.new(raw_quote: p.content.strip)
+      quote.save!
+    rescue Exception => e
+      puts p.content
+      puts e
+    end
   end
 end
+
+parse('archive.html', '.inlinecontent')
+parse('happyman.html', '#content p')
+parse('horstbert.html', '#content p')
