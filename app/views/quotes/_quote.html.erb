@@ -2,7 +2,7 @@
   <h1 class="number"><%= link_to "\##{quote.id}", quote %></h1>
   
   <% if quote.description? %>
-    <p class="description"><%= quote.description %></p>
+  <p class="description"><%= auto_link(quote.description) %></p>
   <% end %>
 
   <table class="lines">
