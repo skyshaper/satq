@@ -4,7 +4,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.order('created_at DESC')
+    @quotes = Quote.order('created_at DESC').includes(:people).includes(:lines)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +16,7 @@ class QuotesController < ApplicationController
   # GET /quotes/person/foo.json
   def person
     @person = Person.find_by_name!(params[:person])
-    @quotes = @person.quotes.order('created_at DESC')
+    @quotes = @person.quotes.order('created_at DESC').includes(:people).includes(:lines)
 
     respond_to do |format|
       format.html { render :index }
@@ -29,7 +29,7 @@ class QuotesController < ApplicationController
   # GET /quotes/1.json
   # GET /quotes/1.text
   def show
-    @quote = Quote.find(params[:id])
+    @quote = Quote.find(params[:id], include: :lines)
 
     respond_to do |format|
       format.html # show.html.erb
