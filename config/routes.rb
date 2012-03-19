@@ -1,6 +1,6 @@
 Satq::Application.routes.draw do
-  resources :quotes
-  match 'quotes/person/:person' => 'quotes#person', via: :get
+  resources :quotes, path: ''
+  get 'person/:person' => 'quotes#person', name: :person
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -48,10 +48,6 @@ Satq::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => redirect('/quotes')
 
   # See how all your routes lay out with "rake routes"
 
