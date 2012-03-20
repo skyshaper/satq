@@ -1,4 +1,4 @@
-<div class="quote">
+<div class="quote" id="quote-<%= quote.id %>">
   <h1 class="number"><%= link_to "\##{quote.id}", quote %></h1>
   
   <% if quote.description? %>
@@ -24,7 +24,7 @@
   
   <div class="links">
     <%= link_to 'Edit', edit_quote_path(quote) %> |
-    <%= link_to 'Delete', quote, confirm: 'Are you sure?', method: :delete %>
+    <%= link_to 'Delete', quote, confirm: 'Are you sure?', method: :delete, remote: true %>
   </div>
   <div style="clear: right;"></div>
 </div>

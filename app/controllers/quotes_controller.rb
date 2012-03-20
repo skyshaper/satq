@@ -102,6 +102,7 @@ class QuotesController < ApplicationController
       expire_page action: :person
       expire_page action: :show
       format.html { redirect_to quotes_url }
+      format.js { }
       format.json { head :no_content }
     end
   end
