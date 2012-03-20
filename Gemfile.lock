@@ -123,6 +123,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    yaml_db (0.2.2)
 
 PLATFORMS
   ruby
@@ -139,3 +140,4 @@ DEPENDENCIES
   sqlite3
   uglifier (>= 1.0.3)
   unicorn
+  yaml_db
