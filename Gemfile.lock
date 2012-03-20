@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/lostapathy/yaml_db.git
+  revision: 98e9a5dca43e3fedd3268c76a73af40d1bdf1dfd
+  specs:
+    yaml_db (0.2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -123,7 +129,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    yaml_db (0.2.2)
 
 PLATFORMS
   ruby
@@ -140,4 +145,4 @@ DEPENDENCIES
   sqlite3
   uglifier (>= 1.0.3)
   unicorn
-  yaml_db
+  yaml_db!

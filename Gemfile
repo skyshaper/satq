@@ -6,7 +6,7 @@ gem 'rails', '3.2.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'yaml_db'
+gem 'yaml_db', git: 'https://github.com/lostapathy/yaml_db.git'
 gem 'rails_autolink'
 
 group :import do
