@@ -1,4 +1,4 @@
-<%= form_for @quote do |f| %>
+<%= form_for @quote, remote: true, html: { id: "quote-#{@quote.id}" } do |f| %>
 <div>
   <%= f.text_area :raw_quote, rows: 10, cols: 70 %>
 </div>

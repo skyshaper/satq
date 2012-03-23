@@ -23,7 +23,7 @@
   </table>
   
   <div class="links">
-    <%= link_to 'Edit', edit_quote_path(quote) %> |
+    <%= link_to 'Edit', edit_quote_path(quote), remote: true  %> |
     <%= link_to 'Delete', quote, confirm: 'Are you sure?', method: :delete, remote: true %>
   </div>
   <div style="clear: right;"></div>

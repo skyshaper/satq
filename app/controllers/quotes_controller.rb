@@ -84,6 +84,7 @@ class QuotesController < ApplicationController
         expire_page action: :show
         format.html { redirect_to @quote }
         format.json { head :no_content }
+        format.js   { }
       else
         format.html { render action: "edit" }
         format.json { render json: @quote.errors, status: :unprocessable_entity }
