@@ -2,6 +2,8 @@ class Quote < ActiveRecord::Base
   has_many :lines, dependent: :destroy, autosave: true
   has_many :people, through: :lines, uniq: true
   
+  default_scope order('created_at DESC').includes(:people).includes(:lines)
+  
   def raw_quote
     lines.map(&:raw_line).join("\n")
   end
