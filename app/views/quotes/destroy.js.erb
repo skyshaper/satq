@@ -1,1 +1,5 @@
-$('#quote-<%= @quote.id %>').hide(500);
+$('#quote-<%= @quote.id %>').remove();
+
+if ($('.quote').length == 0) {
+  document.location = "<%= j quotes_url %>";
+}
