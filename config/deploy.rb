@@ -2,8 +2,7 @@ require 'bundler/capistrano'
 
 # be sure to change these
 set :user, 'satq'
-set :domain, '85.214.129.63'
-set :port, 2205
+set :domain, 'skyshaper.org'
 set :application, 'satq'
    
 # file paths
@@ -34,6 +33,4 @@ set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
-
-require 'capistrano-unicorn'
 
