@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: /srv/satq/shared/production.sqlite3
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: satq
   pool: 5
-  timeout: 5000
+  username: satq
+  password: ""
+  host: localhost

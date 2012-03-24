@@ -9,6 +9,10 @@ gem 'sqlite3'
 gem 'yaml_db', git: 'https://github.com/lostapathy/yaml_db.git'
 gem 'rails_autolink'
 
+group :production do
+  gem 'mysql2'
+end
+
 group :import do
   gem 'nokogiri'
 end
