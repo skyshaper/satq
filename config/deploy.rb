@@ -34,3 +34,11 @@ set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
 
+after "deploy:update_code", "db:symlink"
+
+namespace :db do
+  desc "Make symlink for database.yml"
+  task :symlink do
+    run "ln -nfs #{shared_path}/database.yml #{latest_release}/config/database.yml"
+  end
+end
