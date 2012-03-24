@@ -35,6 +35,9 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    auditable (0.0.7)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
     builder (3.0.0)
     capistrano (2.11.2)
       highline
@@ -129,6 +132,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auditable
   capistrano
   coffee-rails (~> 3.2.1)
   jquery-rails

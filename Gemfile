@@ -8,6 +8,7 @@ gem 'rails', '3.2.0'
 gem 'sqlite3'
 gem 'yaml_db', git: 'https://github.com/lostapathy/yaml_db.git'
 gem 'rails_autolink'
+gem 'auditable'
 
 group :production do
   gem 'mysql2'
