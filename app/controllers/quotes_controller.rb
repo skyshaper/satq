@@ -80,7 +80,9 @@ class QuotesController < ApplicationController
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
         expire_page action: :index
-        expire_page action: :person
+        @quote.people.each do |person|
+          expire_page action: :person, person: person.name
+        end
         expire_page action: :show
         format.html { redirect_to @quote }
         format.json { head :no_content }
