@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312081117) do
+ActiveRecord::Schema.define(:version => 20120325094536) do
+
+  create_table "audits", :force => true do |t|
+    t.integer  "auditable_id"
+    t.string   "auditable_type"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.text     "modifications"
+    t.string   "action"
+    t.string   "tag"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "audits", ["action"], :name => "index_audits_on_action"
+  add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
+  add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
+  add_index "audits", ["tag"], :name => "index_audits_on_tag"
+  add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
   create_table "lines", :force => true do |t|
     t.integer  "person_id"
