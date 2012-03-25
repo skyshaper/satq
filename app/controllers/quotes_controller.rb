@@ -62,7 +62,9 @@ class QuotesController < ApplicationController
     respond_to do |format|
       if @quote.save
         expire_page action: :index
-        expire_page action: :person
+        @quote.people.each do |person|
+          expire_page action: :person, person: person.name
+        end
         format.html { redirect_to @quote }
         format.json { render json: @quote, status: :created, location: @quote }
       else
@@ -102,7 +104,9 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       expire_page action: :index
-      expire_page action: :person
+      @quote.people.each do |person|
+        expire_page action: :person, person: person.name
+      end
       expire_page action: :show
       format.html { redirect_to quotes_url }
       format.js { }
