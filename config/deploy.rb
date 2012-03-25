@@ -42,3 +42,12 @@ namespace :db do
     run "ln -nfs #{shared_path}/database.yml #{latest_release}/config/database.yml"
   end
 end
+
+namespace :passenger do
+  desc "Restart Application"  
+  task :restart do  
+    run "touch #{current_path}/tmp/restart.txt"  
+  end
+end
+
+after :deploy, "passenger:restart"
