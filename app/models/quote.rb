@@ -4,6 +4,8 @@ class Quote < ActiveRecord::Base
   
   default_scope order('created_at DESC').includes(:people).includes(:lines)
   
+  audit :description, :raw_quote
+  
   def raw_quote
     lines.map(&:raw_line).join("\n")
   end
