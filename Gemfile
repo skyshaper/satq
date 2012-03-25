@@ -10,6 +10,10 @@ gem 'yaml_db', git: 'https://github.com/lostapathy/yaml_db.git'
 gem 'rails_autolink'
 gem 'auditable'
 
+group :development do
+  gem 'pry-rails'
+end
+
 group :production do
   gem 'mysql2'
 end
