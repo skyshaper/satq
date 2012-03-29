@@ -23,7 +23,7 @@ class Line < ActiveRecord::Base
     PATTERNS.each do |pattern|
       regex, action = pattern
       if raw_line =~ regex
-        self.person = Person.find_or_create_by_name($1)
+        self.person = Person.find_or_initialize_by_name($1)
         self.body = $2
         self.action = action
         return
