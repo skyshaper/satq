@@ -45,6 +45,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js # new.js.erb
       format.json { render json: @quote }
     end
   end
@@ -66,6 +67,7 @@ class QuotesController < ApplicationController
           expire_page action: :person, person: person.name
         end
         format.html { redirect_to @quote }
+        format.js
         format.json { render json: @quote, status: :created, location: @quote }
       else
         format.html { render action: "new" }
