@@ -2,6 +2,8 @@ class Quote < ActiveRecord::Base
   has_many :lines, dependent: :destroy, autosave: true
   has_many :people, through: :lines, uniq: true
   
+  attr_accessible :description, :raw_quote
+  
   default_scope order('created_at DESC').includes(:people).includes(:lines)
   
   audit :description, :raw_quote
