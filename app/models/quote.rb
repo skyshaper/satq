@@ -22,7 +22,8 @@ class Quote < ActiveRecord::Base
     body = '%' + body.gsub('%', '%%') + '%'
     
     find_by_sql(['SELECT id FROM quotes WHERE id IN 
-                 (SELECT DISTINCT quote_id FROM lines WHERE body LIKE ?)', body]).map(&:id)
+                 (SELECT DISTINCT quote_id FROM ' + connection.quote_column_name('lines') + 
+                 ' WHERE body LIKE ?)', body]).map(&:id)
   end
   
 end
