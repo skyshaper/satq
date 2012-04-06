@@ -1,3 +1,8 @@
+
+<form id="search-form" method="get" action="<%= search_path %>">
+  <input id="search-box" name="q" type="text" />
+</form>
+
 <p id="navlinks" class="links"><%= link_to 'Add quote', new_quote_path, remote: true %>
 
 	<% if @person %>| <%= link_to 'Show all quotes', quotes_path %><% end %>

@@ -23,6 +23,11 @@ class QuotesController < ApplicationController
       format.json { render json: @quotes }
     end
   end
+  
+  def search
+    ids = Quote.ids_matching_body(params[:q])
+    render json: ids
+  end
 
 
   # GET /quotes/1

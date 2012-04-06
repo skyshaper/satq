@@ -34,11 +34,20 @@ h1 {
   font-size: 20pt;
 }
 
-input {
+.edit_quote input {
   font-variant: small-caps; 
 }
 
-.quote, form {
+#search-form {
+  float: right;
+}
+  
+#search-box {
+  font-family: "PT Sans Mono", monospace;
+  font-size: 11pt;
+}
+
+.quote, .edit_quote {
   border: 1px dashed;
   clear: right;
   padding: 0.5em;

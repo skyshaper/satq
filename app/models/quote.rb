@@ -16,5 +16,13 @@ class Quote < ActiveRecord::Base
     self.lines = raw_quote.lines.map do |raw_line|
       Line.new(raw_line: raw_line)
     end
-  end  
+  end
+
+  def self.ids_matching_body(body)
+    body = '%' + body.gsub('%', '%%') + '%'
+    
+    find_by_sql(['SELECT id FROM quotes WHERE id IN 
+                 (SELECT DISTINCT quote_id FROM lines WHERE body LIKE ?)', body]).map(&:id)
+  end
+  
 end

@@ -1,4 +1,5 @@
 Satq::Application.routes.draw do
+  get 'search' => 'quotes#search', as: :search
   resources :quotes, path: ''
   get 'person/:person' => 'quotes#person', as: :person
 
