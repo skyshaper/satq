@@ -3,6 +3,7 @@ require 'test_helper'
 class QuotesControllerTest < ActionController::TestCase
   setup do
     @quote = quotes(:one)
+    @quote_attributes = @quote.attributes.slice(:raw_quote, :description)
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class QuotesControllerTest < ActionController::TestCase
 
   test "should create quote" do
     assert_difference('Quote.count') do
-      post :create, quote: @quote.attributes
+      post :create, quote: @quote_attributes
     end
 
     assert_redirected_to quote_path(assigns(:quote))
@@ -35,7 +36,7 @@ class QuotesControllerTest < ActionController::TestCase
   end
 
   test "should update quote" do
-    put :update, id: @quote, quote: @quote.attributes
+    put :update, id: @quote, quote: @quote_attributes
     assert_redirected_to quote_path(assigns(:quote))
   end
 
