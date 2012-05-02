@@ -93,6 +93,7 @@ class QuotesController < ApplicationController
           expire_page action: :person, person: person.name
         end
         expire_page action: :show
+        expire_fragment @quote
         format.html { redirect_to @quote }
         format.json { head :no_content }
         format.js   { }
@@ -115,6 +116,7 @@ class QuotesController < ApplicationController
         expire_page action: :person, person: person.name
       end
       expire_page action: :show
+      expire_fragment @quote
       format.html { redirect_to quotes_url }
       format.js { }
       format.json { head :no_content }

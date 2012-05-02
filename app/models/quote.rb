@@ -4,7 +4,7 @@ class Quote < ActiveRecord::Base
   
   attr_accessible :description, :raw_quote
   
-  default_scope order('created_at DESC').includes(:people).includes(:lines)
+  default_scope order('created_at DESC')
   
   audit :description, :raw_quote
   
