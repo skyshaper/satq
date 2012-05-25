@@ -1,5 +1,4 @@
 require 'bundler/capistrano'
-require 'capistrano-unicorn'
 
 # be sure to change these
 set :user, 'satq'
@@ -34,6 +33,8 @@ set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
+
+require 'capistrano-unicorn'
 
 after "deploy:update_code", "db:symlink"
 
