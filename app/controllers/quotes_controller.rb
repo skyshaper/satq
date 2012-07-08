@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   caches_page :index, :person, :show
+  cache_sweeper :quote_sweeper
 
   # GET /quotes
   # GET /quotes.json
@@ -67,10 +68,6 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        expire_page action: :index
-        @quote.people.each do |person|
-          expire_page action: :person, person: person.name
-        end
         format.html { redirect_to @quote }
         format.js
         format.json { render json: @quote, status: :created, location: @quote }
@@ -88,12 +85,6 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
-        expire_page action: :index
-        @quote.people.each do |person|
-          expire_page action: :person, person: person.name
-        end
-        expire_page action: :show
-        expire_fragment @quote
         format.html { redirect_to @quote }
         format.json { head :no_content }
         format.js   { }
@@ -111,12 +102,6 @@ class QuotesController < ApplicationController
     @quote.destroy
 
     respond_to do |format|
-      expire_page action: :index
-      @quote.people.each do |person|
-        expire_page action: :person, person: person.name
-      end
-      expire_page action: :show
-      expire_fragment @quote
       format.html { redirect_to quotes_url }
       format.js { }
       format.json { head :no_content }
