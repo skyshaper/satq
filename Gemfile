@@ -5,17 +5,14 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'yaml_db', git: 'https://github.com/lostapathy/yaml_db.git'
 gem 'rails_autolink'
 gem 'auditable'
+gem 'pg'
 
 group :development do
+  gem 'sqlite3'
   gem 'pry-rails'
-end
-
-group :production do
-  gem 'pg'
 end
 
 # Gems used only for assets and not required
