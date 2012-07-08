@@ -15,8 +15,7 @@ development:
 test:
   adapter: postgresql
   database: satq_test
-  pool: 5
-  timeout: 5000
+  username: postgres
 
 production:
   adapter: mysql2
