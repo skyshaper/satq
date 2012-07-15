@@ -46,6 +46,12 @@ class QuotesControllerTest < ActionController::TestCase
     ids = JSON.parse(response.body)    
     assert_equal [@quote.id], ids
   end
+  
+  test "person should return quote" do
+    get :person, person: @quote.people.first.name
+    assert_response :success
+    assert_select '.body', @quote.lines.first.body
+  end
 
   test "should destroy quote" do
     assert_difference('Quote.count', -1) do
