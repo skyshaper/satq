@@ -13,6 +13,7 @@ gem 'pg'
 group :development do
   gem 'sqlite3'
   gem 'pry-rails'
+  gem 'simplecov'
 end
 
 # Gems used only for assets and not required
