@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 1.9.3
+  - rbx-19mode
+  - ruby-head
 script: 
   - RAILS_ENV=test bundle exec rake --trace db:migrate
   - bundle exec rake db:test:prepare
