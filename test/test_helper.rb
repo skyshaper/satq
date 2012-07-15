@@ -1,5 +1,7 @@
-require 'simplecov'
-SimpleCov.start 'rails'
+if RUBY_ENGINE == "ruby"
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
 
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
