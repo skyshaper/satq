@@ -26,4 +26,10 @@ class LineTest < ActiveSupport::TestCase
     assert_equal false, line.action?
     assert_equal '<foo> bar', line.raw_line
   end
+  
+  test "trigger parser exception" do
+    assert_raise Exception do
+      Line.new(raw_line: '')
+    end
+  end
 end
