@@ -8,10 +8,26 @@ gem 'rails', '3.2.6'
 gem 'yaml_db', git: 'https://github.com/lostapathy/yaml_db.git'
 gem 'rails_autolink'
 gem 'auditable'
-gem 'pg'
+
+group :production do
+  platforms :ruby do
+    gem 'pg'
+  end
+
+  platforms :jruby do
+    gem 'activerecord-jdbcpostgresql-adapter'
+  end
+end
 
 group :development do
-  gem 'sqlite3'
+  platforms :ruby do
+    gem 'sqlite3'
+  end
+
+  platforms :jruby do
+    gem 'jruby-openssl'
+    gem 'activerecord-jdbcsqlite3-adapter'
+  end
   gem 'pry-rails'
   gem 'simplecov', platform: :mri
 end
