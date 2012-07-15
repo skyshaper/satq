@@ -39,6 +39,13 @@ class QuotesControllerTest < ActionController::TestCase
     put :update, id: @quote, quote: @quote_attributes
     assert_redirected_to quote_path(assigns(:quote))
   end
+  
+  test "search should return quote" do
+    get :search, q: @quote.lines[0].body
+    assert_response :success
+    ids = JSON.parse(response.body)    
+    assert_equal [@quote.id], ids
+  end
 
   test "should destroy quote" do
     assert_difference('Quote.count', -1) do
