@@ -18,12 +18,12 @@ class Quote < ActiveRecord::Base
     end
   end
 
-  def self.ids_matching_body(body)
+  def self.search(body)
     body = '%' + body.gsub('%', '%%') + '%'
     
-    find_by_sql(['SELECT id FROM quotes WHERE id IN 
+    find_by_sql(['SELECT * FROM quotes WHERE id IN 
                  (SELECT DISTINCT quote_id FROM ' + connection.quote_column_name('lines') + 
-                 ' WHERE body LIKE ?)', body]).map(&:id)
+                 ' WHERE body LIKE ?) ORDER BY created_at DESC', body])
   end
   
 end

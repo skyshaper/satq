@@ -26,8 +26,12 @@ class QuotesController < ApplicationController
   end
   
   def search
-    ids = Quote.ids_matching_body(params[:q])
-    render json: ids
+    @quotes = Quote.search(params[:q])
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @quotes }
+    end
   end
 
 

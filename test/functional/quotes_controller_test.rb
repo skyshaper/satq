@@ -42,9 +42,7 @@ class QuotesControllerTest < ActionController::TestCase
   
   test "search should return quote" do
     get :search, q: @quote.lines[0].body
-    assert_response :success
-    ids = JSON.parse(response.body)    
-    assert_equal [@quote.id], ids
+    assert_match @quote.lines[0].body, @response.body
   end
   
   test "person should return quote" do
