@@ -2,7 +2,7 @@ require 'bundler/capistrano'
 
 # be sure to change these
 set :user, 'satq'
-set :domain, 'skyshaper.org'
+set :domain, 'restricted.skyshaper.org'
 set :application, 'satq'
    
 # file paths
