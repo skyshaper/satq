@@ -43,7 +43,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.text { render text: @quote.raw_quote }
+      format.text
       format.json { render json: @quote }
     end
   end

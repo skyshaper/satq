@@ -1,0 +1,5 @@
+<% if not @quote.description.empty? %>
+<%= @quote.description.html_safe %>
+
+<% end %>
+<%= @quote.raw_quote.html_safe %>
