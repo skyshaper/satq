@@ -9,7 +9,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @quotes }
+      format.json { render :index }
     end
   end
   
@@ -21,7 +21,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @quotes }
+      format.json { render :index }
     end
   end
   
@@ -30,7 +30,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @quotes }
+      format.json { render :index }
     end
   end
 
@@ -44,7 +44,7 @@ class QuotesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.text
-      format.json { render json: @quote }
+      format.json
     end
   end
 
