@@ -8,6 +8,10 @@
 </div>
 <div>
   <%= f.submit 'Save' %>
+  <% if @quote.id %>
   <%= button_to_function 'Cancel', "$('#quote-#{@quote.id}').replaceWith('#{j render @quote}');" %>
+  <% else %>
+  <%= button_to_function 'Cancel', "$('#quote-#{@quote.id}').remove();" %>
+  <% end %>
 </div>
 <% end %>
