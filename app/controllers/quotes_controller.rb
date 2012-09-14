@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  caches_page :index, :person, :show
+  caches_action :index, :person, :show
   cache_sweeper :quote_sweeper
 
   # GET /quotes

@@ -15,12 +15,12 @@ class QuoteSweeper < ActionController::Caching::Sweeper
  
   private
   def expire_cache_for(quote)
-    expire_page(controller: 'quotes', action: 'index') 
-    expire_page(controller: 'quotes', action: 'show', id: quote.id) 
+    expire_action(controller: 'quotes', action: 'index') 
+    expire_action(controller: 'quotes', action: 'show', id: quote.id) 
 
     
     quote.people.each do |person|
-      expire_page(controller: 'quotes', action: 'person', person: person.name)
+      expire_action(controller: 'quotes', action: 'person', person: person.name)
     end
  
     expire_fragment(quote)
