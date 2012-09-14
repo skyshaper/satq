@@ -82,6 +82,25 @@ class QuotesController < ApplicationController
     end
   end
 
+  # POST /quotes/1/undo
+  def undo
+    @quote = Quote.find(params[:id])
+
+    audited_changes = @quote.audited_changes
+    old_values = {}
+    audited_changes.each do |field, values|
+      old_values[field] = values[0]
+    end
+
+    @quote.update_attributes!(old_values)
+
+    respond_to do |format|
+      format.html { redirect_to @quote }
+      format.json { head :no_content }
+      format.js   { render action: 'update' }
+    end
+  end
+
   # PUT /quotes/1
   # PUT /quotes/1.json
   def update

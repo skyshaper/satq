@@ -1,7 +1,9 @@
 Satq::Application.routes.draw do
-  scope '/quotes' do
-    get 'search' => 'quotes#search', as: :search
-    resources :quotes, path: ''
+    resources :quotes do
+        post 'undo', on: :member
+        get 'search', on: :collection
+    end
+
     get 'person/:person' => 'quotes#person', as: :person
 
     # The priority is based upon order of creation:
@@ -56,5 +58,5 @@ Satq::Application.routes.draw do
     # This is a legacy wild controller route that's not recommended for RESTful applications.
     # Note: This route will make all actions in every controller accessible via GET requests.
     # match ':controller(/:action(/:id))(.:format)'
-  end
+
 end
