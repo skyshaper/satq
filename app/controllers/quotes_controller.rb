@@ -12,7 +12,7 @@ class QuotesController < ApplicationController
       format.json { render :index }
     end
   end
-  
+
   # GET /quotes/person/foo
   # GET /quotes/person/foo.json
   def person
@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
       format.json { render :index }
     end
   end
-  
+
   def search
     @quotes = Quote.search(params[:q])
 

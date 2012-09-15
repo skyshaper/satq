@@ -9,7 +9,7 @@ class QuoteTest < ActiveSupport::TestCase
     assert_equal 'Spam', quote.lines[1].body
     assert_equal false, quote.lines[0].action
   end
-  
+
   test "parse IRC format" do
     quote = Quote.new(raw_quote: "<foo>Bar\n* bar Spam")
     assert_quote quote
@@ -17,7 +17,7 @@ class QuoteTest < ActiveSupport::TestCase
     assert_equal "<foo> Bar\n* bar Spam", quote.raw_quote
   end
 
-  
+
   test "parse conversation format" do
     quote = Quote.new(raw_quote: "foo: Bar\nbar: Spam")
     assert_quote quote
