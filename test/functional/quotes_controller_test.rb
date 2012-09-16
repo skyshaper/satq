@@ -58,4 +58,9 @@ class QuotesControllerTest < ActionController::TestCase
 
     assert_redirected_to quotes_path
   end
+  
+  test "should handle HTML characteres properly (issue GH-13)" do
+    get :show, id: quotes(:issue13)
+    assert_select '.body', 'NONO, YOU GET THIS WRONG &lt;_&lt;'
+  end
 end

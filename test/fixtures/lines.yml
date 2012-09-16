@@ -9,3 +9,8 @@ two:
   person: two
   quote: two
   body: MyText2
+
+issue13:
+  person: two
+  quote: issue13
+  body: 'NONO, YOU GET THIS WRONG <_<'
