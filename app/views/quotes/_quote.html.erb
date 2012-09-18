@@ -16,7 +16,7 @@
         <% end %>
       
         <td class="person"><%= link_to line.person.name, person_path(line.person.name) %></a></td>
-        <td class="body"><%= auto_link(line.body) %></td>
+        <td class="body"><%= auto_link(html_escape(line.body)) %></td>
       
         </tr>
       <% end %>

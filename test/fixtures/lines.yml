@@ -9,6 +9,11 @@ two:
   person: two
   quote: two
   body: MyText2
+  
+auto_link:
+  person: two
+  quote: auto_link
+  body: Check this out http://foo.de
 
 issue13:
   person: two

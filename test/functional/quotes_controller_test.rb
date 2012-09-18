@@ -63,4 +63,9 @@ class QuotesControllerTest < ActionController::TestCase
     get :show, id: quotes(:issue13)
     assert_select '.body', 'NONO, YOU GET THIS WRONG &lt;_&lt;'
   end
+  
+  test "should make links clickable" do
+    get :show, id: quotes(:auto_link)
+    assert_select '.body a', 'http://foo.de'
+  end
 end
