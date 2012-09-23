@@ -59,3 +59,4 @@ gem 'capistrano'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'devise'
+gem 'devise_invitable'
