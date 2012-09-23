@@ -37,7 +37,7 @@ Satq::Application.configure do
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups
-  config.logger = Logger.new(config.paths['log'].first, 'daily')
+  # config.logger = Logger.new(config.paths['log'].first, 'daily')
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
@@ -64,6 +64,6 @@ Satq::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  
+
   config.action_controller.relative_url_root = '/quotes'
 end
