@@ -1,4 +1,6 @@
 class QuotesController < ApplicationController
+  before_filter :authenticate_user!
+
   caches_action :index, :person, :show
   cache_sweeper :quote_sweeper
 

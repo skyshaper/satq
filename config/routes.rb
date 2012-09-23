@@ -1,4 +1,6 @@
 Satq::Application.routes.draw do
+  devise_for :users
+
     resources :quotes do
         post 'undo', on: :member
         get 'search', on: :collection

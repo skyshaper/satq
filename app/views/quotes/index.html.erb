@@ -8,7 +8,10 @@
 	<% if action_name == "person" or action_name == "search" %>
   | <%= link_to 'Show all quotes', quotes_path %>
   <% end %>
-  
+
+  |  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+
+
 
 </p>
 

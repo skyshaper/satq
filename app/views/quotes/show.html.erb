@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p class="links"><%= link_to 'Show all quotes', quotes_path %></p>
+<p class="links">
+  <%= link_to 'Show all quotes', quotes_path %> |
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+</p>
 
 <%= render @quote %>
