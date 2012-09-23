@@ -6,6 +6,8 @@ Satq::Application.routes.draw do
 
     get 'person/:person' => 'quotes#person', as: :person
 
+    root to: redirect('/quotes')
+
     # The priority is based upon order of creation:
     # first created -> highest priority.
 
