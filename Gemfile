@@ -29,6 +29,7 @@ group :development do
     gem 'activerecord-jdbcsqlite3-adapter'
   end
   gem 'pry-rails'
+  gem 'awesome_print'
   gem 'simplecov', platform: :mri
 end
 
