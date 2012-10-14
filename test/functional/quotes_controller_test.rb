@@ -1,12 +1,16 @@
 require 'test_helper'
 
 class QuotesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @quote = quotes(:one)
     @quote_attributes = @quote.attributes.slice(:raw_quote, :description)
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:one)
   end
 
-  test "should get index" do
+ test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:quotes)
@@ -39,12 +43,12 @@ class QuotesControllerTest < ActionController::TestCase
     put :update, id: @quote, quote: @quote_attributes
     assert_redirected_to quote_path(assigns(:quote))
   end
-  
+
   test "search should return quote" do
     get :search, q: @quote.lines[0].body
     assert_match @quote.lines[0].body, @response.body
   end
-  
+
   test "person should return quote" do
     get :person, person: @quote.people.first.name
     assert_response :success
@@ -58,12 +62,12 @@ class QuotesControllerTest < ActionController::TestCase
 
     assert_redirected_to quotes_path
   end
-  
+
   test "should handle HTML characteres properly (issue GH-13)" do
     get :show, id: quotes(:issue13)
     assert_select '.body', 'NONO, YOU GET THIS WRONG &lt;_&lt;'
   end
-  
+
   test "should make links clickable" do
     get :show, id: quotes(:auto_link)
     assert_select '.body a', 'http://foo.de'
