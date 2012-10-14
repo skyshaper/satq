@@ -17,6 +17,8 @@ group :production do
   platforms :jruby do
     gem 'activerecord-jdbcpostgresql-adapter'
   end
+
+  gem 'newrelic_rpm'
 end
 
 group :development do
