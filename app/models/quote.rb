@@ -13,9 +13,17 @@ class Quote < ActiveRecord::Base
   end
     
   def raw_quote=(raw_quote)
-    self.lines = raw_quote.lines.map do |raw_line|
-      Line.new(raw_line: raw_line)
+    lines = []
+    
+    raw_quote.lines.map do |raw_line|
+      begin
+        lines << Line.new(raw_line: raw_line)
+      rescue LineParserError => error
+        next
+      end
     end
+    
+    self.lines = lines
   end
 
   def self.search(body)

@@ -1,3 +1,6 @@
+class LineParserError < Exception
+end
+
 class Line < ActiveRecord::Base
   belongs_to :person
   belongs_to :quote
@@ -31,6 +34,6 @@ class Line < ActiveRecord::Base
         return
       end
     end
-    raise Exception.new("Failed to parse #{raw_line}")
+    raise LineParserError.new("Failed to parse: #{raw_line}")
   end
 end

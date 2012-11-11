@@ -28,7 +28,7 @@ class LineTest < ActiveSupport::TestCase
   end
   
   test "trigger parser exception" do
-    assert_raise Exception do
+    assert_raise LineParserError do
       Line.new(raw_line: '')
     end
   end
