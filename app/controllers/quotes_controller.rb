@@ -71,6 +71,7 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(params[:quote])
+    @quote.changed_by = current_user
 
     respond_to do |format|
       if @quote.save
@@ -94,6 +95,7 @@ class QuotesController < ApplicationController
       old_values[field] = values[0]
     end
 
+    @quote.changed_by = current_user
     @quote.update_attributes!(old_values)
 
     respond_to do |format|
@@ -107,6 +109,7 @@ class QuotesController < ApplicationController
   # PUT /quotes/1.json
   def update
     @quote = Quote.find(params[:id])
+    @quote.changed_by = current_user
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
