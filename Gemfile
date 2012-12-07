@@ -18,7 +18,7 @@ group :production do
     gem 'activerecord-jdbcpostgresql-adapter'
   end
 
-  gem 'newrelic_rpm'
+  gem 'newrelic_rpm', '>= 3.5.3.25'
 end
 
 group :development do
