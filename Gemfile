@@ -11,26 +11,13 @@ gem 'rails_autolink'
 gem 'auditable'
 
 group :production do
-  platforms :ruby do
-    gem 'pg'
-  end
-
-  platforms :jruby do
-    gem 'activerecord-jdbcpostgresql-adapter'
-  end
+  gem 'pg'
 
   gem 'newrelic_rpm', '>= 3.5.3.25'
 end
 
 group :development do
-  platforms :ruby do
-    gem 'sqlite3'
-  end
-
-  platforms :jruby do
-    gem 'jruby-openssl'
-    gem 'activerecord-jdbcsqlite3-adapter'
-  end
+  gem 'sqlite3'
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'simplecov', platform: :mri
