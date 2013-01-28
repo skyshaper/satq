@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/lostapathy/yaml_db.git
-  revision: 98e9a5dca43e3fedd3268c76a73af40d1bdf1dfd
-  specs:
-    yaml_db (0.2.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -171,4 +165,3 @@ DEPENDENCIES
   simplecov
   sqlite3
   uglifier (>= 1.0.3)
-  yaml_db!
