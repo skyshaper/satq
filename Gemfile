@@ -13,10 +13,6 @@ gem 'pg'
 gem 'pry-rails'
 gem 'awesome_print'
 
-group :production do
-  gem 'newrelic_rpm', '>= 3.5.3.25'
-end
-
 group :development do
   gem 'simplecov', platform: :mri
 end
