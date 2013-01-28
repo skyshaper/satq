@@ -9,14 +9,13 @@ gem 'rails', '3.2.11'
 gem 'rails_autolink'
 gem 'auditable'
 
-group :production do
-  gem 'pg'
+gem 'pg'
 
+group :production do
   gem 'newrelic_rpm', '>= 3.5.3.25'
 end
 
 group :development do
-  gem 'sqlite3'
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'simplecov', platform: :mri
