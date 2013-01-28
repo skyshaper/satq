@@ -59,5 +59,6 @@ module Satq
     config.action_controller.page_cache_compression = :best_compression
 
     config.assets.initialize_on_precompile = false
+    config.logger = Logger.new(STDOUT)
   end
 end
