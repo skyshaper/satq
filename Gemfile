@@ -10,14 +10,14 @@ gem 'rails_autolink'
 gem 'auditable'
 
 gem 'pg'
+gem 'pry-rails'
+gem 'awesome_print'
 
 group :production do
   gem 'newrelic_rpm', '>= 3.5.3.25'
 end
 
 group :development do
-  gem 'pry-rails'
-  gem 'awesome_print'
   gem 'simplecov', platform: :mri
 end
 
