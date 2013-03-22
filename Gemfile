@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '1.9.3', engine: 'jruby', engine_version: '1.7.3'
 gem 'rails', '~> 3.2.12'
 
 # Bundle edge Rails instead:
@@ -9,7 +9,7 @@ gem 'rails', '~> 3.2.12'
 gem 'rails_autolink'
 gem 'auditable'
 
-gem 'pg'
+gem 'activerecord-jdbcpostgresql-adapter'
 gem 'pry-rails'
 gem 'awesome_print'
 
@@ -42,5 +42,5 @@ gem 'jbuilder'
 
 gem 'devise'
 gem 'devise_invitable'
-gem 'unicorn'
+gem 'puma'
 gem 'exception_notification'
