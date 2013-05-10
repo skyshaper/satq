@@ -15,6 +15,7 @@ gem 'awesome_print'
 
 group :development do
   gem 'simplecov', platform: :mri
+  gem 'brakeman', require: false
 end
 
 # Gems used only for assets and not required
