@@ -30,8 +30,8 @@ class Quote < ActiveRecord::Base
     body = '%' + body.gsub('%', '%%') + '%'
     
     find_by_sql(['SELECT * FROM quotes WHERE id IN 
-                 (SELECT DISTINCT quote_id FROM ' + connection.quote_column_name('lines') + 
-                 ' WHERE body LIKE ?) ORDER BY created_at DESC', body])
+                 (SELECT DISTINCT quote_id FROM lines
+                 WHERE body LIKE ?) ORDER BY created_at DESC', body])
   end
   
 end
