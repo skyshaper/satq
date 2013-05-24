@@ -55,6 +55,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
+    commands (0.2.1)
+      rails (>= 3.2.0)
     dalli (2.6.3)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
@@ -187,6 +189,7 @@ DEPENDENCIES
   awesome_print
   brakeman
   coffee-rails (~> 3.2.1)
+  commands
   dalli
   devise
   devise_invitable
