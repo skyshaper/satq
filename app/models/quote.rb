@@ -31,7 +31,7 @@ class Quote < ActiveRecord::Base
     
     find_by_sql(['SELECT * FROM quotes WHERE id IN 
                  (SELECT DISTINCT quote_id FROM lines
-                 WHERE body LIKE ?) ORDER BY created_at DESC', body])
+                 WHERE body ILIKE ?) ORDER BY created_at DESC', body])
   end
   
 end
