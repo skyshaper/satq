@@ -68,6 +68,7 @@ GEM
       devise (>= 2.1.2)
       railties (~> 3.0)
     erubis (2.7.0)
+    escape_utils (0.3.2)
     exception_notification (4.0.0)
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
@@ -196,6 +197,7 @@ DEPENDENCIES
   dalli
   devise
   devise_invitable
+  escape_utils
   exception_notification
   jbuilder
   jquery-rails
