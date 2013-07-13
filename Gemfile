@@ -1,15 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-gem 'rails', '~> 3.2.14rc1'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+ruby '1.9.3', engine: 'jruby', engine_version: '1.7.4'
 
 gem 'rails_autolink'
 gem 'auditable'
 
-gem 'pg'
+gem 'activerecord-jdbcpostgresql-adapter'
 gem 'pry-rails'
 gem 'awesome_print'
 
@@ -43,8 +39,7 @@ gem 'jbuilder'
 
 gem 'devise'
 gem 'devise_invitable'
-gem 'unicorn'
+gem 'puma'
 gem 'dalli'
 gem 'memcachier'
 gem 'commands'
-gem 'escape_utils'
