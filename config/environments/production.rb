@@ -79,8 +79,3 @@ ActionMailer::Base.smtp_settings = {
   :domain         => 'heroku.com'
 }
 ActionMailer::Base.delivery_method = :smtp
-
-Satq::Application.config.middleware.use ExceptionNotifier,
-  :email_prefix => "[SATQ] ",
-  :sender_address => %{"SATQ" <satq@skyshaper.org>},
-  :exception_recipients => %w{mxey@mxey.net}

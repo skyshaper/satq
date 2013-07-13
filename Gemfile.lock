@@ -69,9 +69,6 @@ GEM
       railties (~> 3.0)
     erubis (2.7.0)
     escape_utils (0.3.2)
-    exception_notification (4.0.0)
-      actionmailer (>= 3.0.4)
-      activesupport (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
@@ -198,7 +195,6 @@ DEPENDENCIES
   devise
   devise_invitable
   escape_utils
-  exception_notification
   jbuilder
   jquery-rails
   memcachier
