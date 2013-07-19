@@ -36,4 +36,4 @@ set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
 
-after 'deploy:restart', 'unicorn:reload' # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart' # app IS NOT preloaded

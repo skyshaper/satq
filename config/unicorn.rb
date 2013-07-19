@@ -1,6 +1,8 @@
-worker_processes 3
+worker_processes 4
 timeout 30
 preload_app true
+working_directory "/srv/satq/current"
+listen "localhost:8080"
 
 before_fork do |server, worker|
   if defined?(ActiveRecord::Base)
