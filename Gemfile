@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3', engine: 'jruby', engine_version: '1.7.4'
+ruby '2.0.0'
 
 gem 'rails_autolink'
 gem 'auditable'
 
-gem 'activerecord-jdbcpostgresql-adapter'
+gem 'pg'
 gem 'pry-rails'
 gem 'awesome_print'
 
@@ -34,12 +34,13 @@ gem 'jquery-rails'
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
+# Deploy with Capistrano
+gem 'capistrano'
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'devise'
 gem 'devise_invitable'
-gem 'puma'
-gem 'dalli'
-gem 'memcachier'
+gem 'unicorn'
 gem 'commands'
