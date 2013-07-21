@@ -6,7 +6,6 @@ class Line < ActiveRecord::Base
   belongs_to :quote
   
   validates :person, presence: true
-  attr_accessible :raw_line
   
   default_scope order('id')
   

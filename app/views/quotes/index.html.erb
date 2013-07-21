@@ -1,20 +1,22 @@
+<% cache do %>
+  <form id="search-form" method="get" action="<%= search_quotes_path %>">
+    <input id="search-box" name="q" type="text" />
+  </form>
 
-<form id="search-form" method="get" action="<%= search_quotes_path %>">
-  <input id="search-box" name="q" type="text" />
-</form>
+  <p id="navlinks" class="links"><%= link_to 'Add quote', new_quote_path, remote: true %>
 
-<p id="navlinks" class="links"><%= link_to 'Add quote', new_quote_path, remote: true %>
+  	<% if action_name == "person" or action_name == "search" %>
+    | <%= link_to 'Show all quotes', quotes_path %>
+    <% end %>
 
-	<% if action_name == "person" or action_name == "search" %>
-  | <%= link_to 'Show all quotes', quotes_path %>
+    |  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+
+
+
+  </p>
+
+  <% @quotes.each do |quote| %>
+  <%= render quote %>
   <% end %>
 
-  |  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-
-
-
-</p>
-
-<% @quotes.each do |quote| %>
-<%= render quote %>
 <% end %>

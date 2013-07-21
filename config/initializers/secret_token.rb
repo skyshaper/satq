@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Satq::Application.config.secret_token = ENV['RAILS_SECRET_TOKEN'] || '6869a8df1655c7356d86b11a572c2d98'
+Satq::Application.config.secret_key_base = ENV['RAILS_SECRET_KEY_BASE'] || '6869a8df1655c7356d86b11a572c2d98'

@@ -25,7 +25,7 @@
   
     <div class="links">
       <%= link_to 'Edit', edit_quote_path(quote), remote: true  %> |
-      <%= link_to 'Delete', quote, confirm: 'Are you sure?', method: :delete, remote: true %> | 
+      <%= link_to 'Delete', quote, data: { confirm: 'Are you sure?' }, method: :delete, remote: true %> | 
       <%= link_to 'Undo', undo_quote_path(quote), method: :post, remote: true %>
     </div>
     <div style="clear: right;"></div>

@@ -1,9 +1,6 @@
 class QuotesController < ApplicationController
   before_filter :authenticate_user!
 
-  caches_action :index, :person, :show
-  cache_sweeper :quote_sweeper
-
   # GET /quotes
   # GET /quotes.json
   def index
@@ -70,7 +67,7 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = Quote.new(params[:quote])
+    @quote = Quote.new(quote_params)
     @quote.changed_by = current_user
 
     respond_to do |format|
@@ -112,7 +109,7 @@ class QuotesController < ApplicationController
     @quote.changed_by = current_user
 
     respond_to do |format|
-      if @quote.update_attributes(params[:quote])
+      if @quote.update_attributes(quote_params)
         format.html { redirect_to @quote }
         format.json { head :no_content }
         format.js   { }
@@ -134,5 +131,11 @@ class QuotesController < ApplicationController
       format.js { }
       format.json { head :no_content }
     end
+  end
+  
+  protected
+  
+  def quote_params
+    params.require(:quote).permit(:description, :raw_quote)
   end
 end
