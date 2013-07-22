@@ -7,7 +7,7 @@ class Line < ActiveRecord::Base
   
   validates :person, presence: true
   
-  default_scope order('id')
+  default_scope -> { order('id') }
   
   PATTERNS = [
     [ /<\s*([^>]+)\s*>\s*(.*)$/, false ],
