@@ -6,6 +6,7 @@ gem 'rails', '~> 4.0.0'
 
 gem 'rails_autolink'
 gem 'auditable', '< 0.1.5'
+gem 'turbolinks'
 
 gem 'pg'
 gem 'pry-rails'
