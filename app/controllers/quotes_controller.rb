@@ -38,7 +38,7 @@ class QuotesController < ApplicationController
   # GET /quotes/1.json
   # GET /quotes/1.text
   def show
-    @quote = Quote.find(params[:id], include: :lines)
+    @quote = Quote.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
