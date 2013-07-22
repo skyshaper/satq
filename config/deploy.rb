@@ -37,3 +37,10 @@ set :use_sudo, false
 set :rails_env, :production
 
 after 'deploy:restart', 'unicorn:restart' # app IS NOT preloaded
+
+after "deploy:update_code", "symlink_secret_token"
+
+desc "Make symlink for secret_token.rb"
+task :symlink_secret_token do
+  run "ln -nfs #{shared_path}/secret_token.rb #{latest_release}/config/initializers/secret_token.rb"
+end
