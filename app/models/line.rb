@@ -3,7 +3,7 @@ end
 
 class Line < ActiveRecord::Base
   belongs_to :person
-  belongs_to :quote
+  belongs_to :quote, touch: true
   
   validates :person, presence: true
   
