@@ -5,10 +5,12 @@ class QuotesController < ApplicationController
   # GET /quotes.json
   def index
     @quotes = Quote.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :index }
+    
+    if stale?(etag: view_context.cache_key_for_quotes) 
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render :index }
+      end
     end
   end
 
@@ -18,9 +20,11 @@ class QuotesController < ApplicationController
     @person = Person.find_by_name!(params[:person])
     @quotes = @person.quotes
 
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render :index }
+    if stale?(etag: view_context.cache_key_for_quotes) 
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render :index }
+      end
     end
   end
 
@@ -40,10 +44,12 @@ class QuotesController < ApplicationController
   def show
     @quote = Quote.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.text
-      format.json
+    if stale?(@quote)
+      respond_to do |format|
+        format.html # show.html.erb
+        format.text
+        format.json
+      end
     end
   end
 
