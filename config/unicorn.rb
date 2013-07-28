@@ -3,7 +3,6 @@ timeout 30
 preload_app true
 working_directory "/srv/satq/current"
 listen "localhost:8080"
-pid "/srv/satq/current/tmp/pids/unicorn.pid"
 
 before_fork do |server, worker|
   if defined?(ActiveRecord::Base)

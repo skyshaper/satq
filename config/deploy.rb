@@ -36,7 +36,13 @@ set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
 
-after 'deploy:restart', 'unicorn:restart' # app IS NOT preloaded
+after 'deploy:restart', 'supervisor:restart'
+
+namespace :supervisor do
+  task :restart do
+    run "sudo supervisorctl restart satq"
+  end
+end
 
 after "deploy:update_code", "symlink_secret_token"
 
