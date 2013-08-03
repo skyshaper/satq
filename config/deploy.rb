@@ -1,5 +1,4 @@
 require 'bundler/capistrano'
-require 'capistrano-unicorn'
 
 
 # be sure to change these

@@ -58,8 +58,6 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    capistrano-unicorn (0.1.9)
-      capistrano
     coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -192,7 +190,6 @@ DEPENDENCIES
   awesome_print
   brakeman
   capistrano
-  capistrano-unicorn
   coffee-rails
   commands
   devise
