@@ -27,9 +27,7 @@ class Quote < ActiveRecord::Base
   def self.search(body)
     body = '%' + body.gsub('%', '%%') + '%'
     
-    find_by_sql(['SELECT * FROM quotes WHERE id IN 
-                 (SELECT DISTINCT quote_id FROM lines
-                 WHERE body ILIKE ?) ORDER BY created_at DESC', body])
+    Quote.joins(:lines).where(Line.arel_table[:body].matches(body)).uniq
   end
   
 end
