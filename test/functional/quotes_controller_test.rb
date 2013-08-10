@@ -5,7 +5,10 @@ class QuotesControllerTest < ActionController::TestCase
 
   setup do
     @quote = quotes(:one)
-    @quote_attributes = @quote.attributes.slice(:raw_quote, :description)
+    @quote_attributes = {
+      raw_quote: @quote.raw_quote,
+      description: @quote.description,
+    }
     @request.env["devise.mapping"] = Devise.mappings[:user]
     sign_in users(:one)
   end
