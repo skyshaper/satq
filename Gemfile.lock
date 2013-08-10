@@ -200,6 +200,7 @@ DEPENDENCIES
   pry-rails
   rails (~> 4.0.0)
   rails_autolink
+  rake
   sass-rails
   simplecov
   turbolinks

@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'pg'
 gem 'pry-rails'
 gem 'awesome_print'
+gem 'rake'
 
 group :development do
   gem 'simplecov', platform: :mri
