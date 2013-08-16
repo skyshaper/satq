@@ -42,7 +42,7 @@ after 'deploy:restart', 'supervisor:restart'
 
 namespace :supervisor do
   task :restart do
-    run "sudo supervisorctl restart satq"
+    run "svc -t ~/service/satq"
   end
 end
 
