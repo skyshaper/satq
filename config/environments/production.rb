@@ -59,9 +59,6 @@ Satq::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { host: 'skyshaper-quotes.herokuapp.com', protocol: 'https' }
-
-  config.force_ssl = true
-  
   config.eager_load = true
 end
 
