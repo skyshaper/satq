@@ -42,5 +42,5 @@ gem 'capistrano'
 
 gem 'devise'
 gem 'devise_invitable', github: 'scambra/devise_invitable'
-gem 'unicorn'
+gem 'fcgi'
 gem 'commands'
