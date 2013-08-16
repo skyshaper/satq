@@ -17,5 +17,6 @@ test:
 production:
   adapter: postgresql
   database: satq
+  host: /home/shaperia/tmp
   pool: 5
   timeout: 5000
