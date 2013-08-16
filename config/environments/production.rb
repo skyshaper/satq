@@ -37,7 +37,7 @@ Satq::Application.configure do
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups
-  config.logger = Logger.new(config.paths['log'].first, 'daily')
+  config.logger = Logger.new(STDOUT)
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"

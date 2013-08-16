@@ -2,13 +2,13 @@ require 'bundler/capistrano'
 
 
 # be sure to change these
-set :user, 'satq'
-set :domain, 'mxeyweb.mxey.net'
+set :user, 'shaperia'
+set :domain, 'lynx.uberspace.de'
 set :application, 'satq'
    
 # file paths
-set :repository,  "https://github.com/mxey/satq.git" 
-set :deploy_to, "/srv/satq" 
+set :repository,  "https://github.com/skyshaper/satq.git" 
+set :deploy_to, "/home/shaperia/satq" 
  
 # distribute your applications across servers (the instructions below put them
 # all on the same server, defined above as 'domain', adjust as necessary)
@@ -34,6 +34,9 @@ set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
+set :default_environment, {
+  'PATH' => '/home/shaperia/.gem/ruby/2.0.0/bin:/package/host/localhost/ruby-2.0.0/bin:/package/host/localhost/postgresql-9.2/bin:/home/shaperia/.toast/armed/bin:/package/host/localhost/php-5.4.4/bin:/home/shaperia/perl5/perlbrew/bin:/home/shaperia/perl5/perlbrew/perls/perl-5.18.1/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/var/qmail/bin:/home/shaperia/bin'
+}
 
 after 'deploy:restart', 'supervisor:restart'
 
