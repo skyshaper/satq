@@ -38,9 +38,7 @@ set :default_environment, {
   'PATH' => '/home/shaperia/.gem/ruby/2.0.0/bin:/package/host/localhost/ruby-2.0.0/bin:/package/host/localhost/postgresql-9.2/bin:/home/shaperia/.toast/armed/bin:/package/host/localhost/php-5.4.4/bin:/home/shaperia/perl5/perlbrew/bin:/home/shaperia/perl5/perlbrew/perls/perl-5.18.1/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/var/qmail/bin:/home/shaperia/bin'
 }
 
-after 'deploy:restart', 'supervisor:restart'
-
-namespace :supervisor do
+namespace :deploy do
   task :restart do
     run "svc -t ~/service/satq"
   end
