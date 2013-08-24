@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '~> 4.0.0'
 
 gem 'rails_autolink'
-gem 'auditable', '< 0.1.5'
+gem 'auditable', github: 'harleyttd/auditable' # Git version still required for Rails 4
 gem 'turbolinks'
 
 gem 'pg'
@@ -41,6 +41,6 @@ gem 'capistrano'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'devise'
-gem 'devise_invitable', github: 'scambra/devise_invitable'
+gem 'devise_invitable'
 gem 'unicorn'
 gem 'commands'
