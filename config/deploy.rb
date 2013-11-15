@@ -43,10 +43,3 @@ namespace :deploy do
     run "svc -t ~/service/satq"
   end
 end
-
-after "deploy:update_code", "symlink_secret_token"
-
-desc "Make symlink for secret_token.rb"
-task :symlink_secret_token do
-  run "ln -nfs #{shared_path}/secret_token.rb #{latest_release}/config/initializers/secret_token.rb"
-end
