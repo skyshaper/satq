@@ -19,3 +19,4 @@
 
 # Ignore simplecov output
 /coverage
+/.vagrant
