@@ -1,7 +1,7 @@
 worker_processes 4
 timeout 30
 preload_app true
-working_directory "/home/shaperia/satq/current"
+working_directory "/home/shaperia/satq"
 listen "127.0.0.1:61543"
 
 before_fork do |server, worker|
