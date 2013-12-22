@@ -1,0 +1,7 @@
+#!/bin/sh -eux
+RB_USER_INSTALL=1 bundle update
+bundle exec rake test
+git add -A
+git commit -m "Update dependencies" || exit 0 
+git push
+bundle exec cap deploy
