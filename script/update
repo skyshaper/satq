@@ -4,4 +4,4 @@ bundle exec rake test
 git add -A
 git commit -m "Update dependencies" || exit 0 
 git push
-bundle exec cap deploy
+ansible-playbook -i ansible_hosts ansible_playbook.yml
