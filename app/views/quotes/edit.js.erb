@@ -1,1 +1,4 @@
 $('#quote-<%= @quote.id %>').replaceWith("<%=j render 'form' %>");
+$('#quote-<%= @quote.id %> .cancel-quote').click(function() {
+    $('#quote-<%= @quote.id %>').replaceWith('<%= j render @quote %>');
+});
