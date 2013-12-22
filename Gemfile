@@ -34,9 +34,6 @@ gem 'jquery-rails'
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
-# Deploy with Capistrano
-gem 'capistrano', '< 3'
-
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
