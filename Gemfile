@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '~> 4.0.0'
 
 gem 'rails_autolink'
-gem 'auditable', github: 'harleyttd/auditable' # Git version still required for Rails 4
+gem 'auditable'
 gem 'turbolinks'
 
 gem 'pg'
