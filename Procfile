@@ -1,1 +1,1 @@
-web: bundle exec rails server puma -p $PORT -e $RACK_ENV
+web: ./bin/rails server puma -p $PORT -e $RACK_ENV
