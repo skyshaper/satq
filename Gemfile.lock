@@ -27,7 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
-    auditable (0.1.4)
+    auditable (0.1.6)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
     awesome_print (1.2.0)
