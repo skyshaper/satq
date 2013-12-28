@@ -47,6 +47,28 @@ class QuotesControllerTest < ActionController::TestCase
     assert_redirected_to quote_path(assigns(:quote))
   end
 
+  test "should revert quote" do
+    # need to make a change first to trigger an Auditable store, because fixtures don't
+    patch :update, id: @quote, quote: {
+      raw_quote: '<foo> old message',
+      description: 'old description'
+    }
+    patch :update, id: @quote, quote: {
+      raw_quote: '<foo> new message',
+      description: 'new description'
+    }
+    get :show, id: @quote
+    assert_select '.description', 'new description'
+    assert_select '.body', 'new message'
+
+    post :undo, id: @quote
+    assert_redirected_to quote_path(@quote)
+
+    get :show, id: @quote
+    assert_select '.description', 'old description'
+    assert_select '.body', 'old message'
+  end
+
   test "search should return quote" do
     get :search, q: @quote.lines[0].body
     assert_match @quote.lines[0].body, @response.body
