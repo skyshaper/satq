@@ -1,7 +1,11 @@
 #!/bin/sh -eux
 RB_USER_INSTALL=1 bundle update
+if git diff --quiet --exit-code; then
+    exit 0
+fi
 ./bin/rake test
 git add -A
-git commit -m "Update dependencies" || exit 0 
+git commit -m "Update dependencies"
 git push
 ansible-playbook -i ansible_hosts ansible_playbook.yml
+exit 1
