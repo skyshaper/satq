@@ -30,4 +30,11 @@ class Quote < ActiveRecord::Base
     Quote.joins(:lines).where(Line.arel_table[:body].matches(body)).uniq
   end
   
+  def self.undelete(quote_id)
+    last_audit = Auditable::Audit.where(auditable_type: 'Quote', auditable_id: quote_id).order('created_at DESC').first
+    quote_attributes = last_audit.modifications
+    quote_attributes[:id] = quote_id
+    Quote.create!(quote_attributes)
+  end
+  
 end

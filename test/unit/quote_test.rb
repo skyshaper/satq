@@ -23,4 +23,16 @@ class QuoteTest < ActiveSupport::TestCase
     assert_quote quote
     assert_equal false, quote.lines[1].action
   end
+  
+  test "undelete" do
+    quote = quotes(:one)
+    quote.snap! action: 'create'
+    
+    quote_id = quote.id
+    quote.destroy!
+    Quote.undelete(quote_id)
+    quote = Quote.find(quote_id)
+    assert_equal quote.id, quote_id
+    assert_equal quote.raw_quote, '<PersonOne> MyText1'
+  end
 end
