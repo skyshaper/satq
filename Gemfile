@@ -16,6 +16,7 @@ gem 'rake'
 group :development do
   gem 'simplecov', platform: :mri
   gem 'brakeman', require: false
+  gem 'spring'
 end
 
 gem 'sass-rails'
