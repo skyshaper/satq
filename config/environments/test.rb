@@ -30,4 +30,6 @@ Satq::Application.configure do
   config.active_support.deprecation = :stderr
   
   config.eager_load = false
+  
+  config.action_mailer.default_url_options = { :host => 'peopledir.dev' }
 end
