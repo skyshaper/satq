@@ -31,5 +31,5 @@ Satq::Application.configure do
   
   config.eager_load = false
   
-  config.action_mailer.default_url_options = { :host => 'peopledir.dev' }
+  config.action_mailer.default_url_options = { :host => 'satq.dev' }
 end
