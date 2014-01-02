@@ -7,5 +7,5 @@ fi
 git add -A
 git commit -m "Update dependencies"
 git push
-ansible-playbook -i ansible_hosts ansible_playbook.yml
+ansible-playbook -i ansible_hosts -c local ansible_playbook.yml
 exit 1
