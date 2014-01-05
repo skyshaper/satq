@@ -58,8 +58,11 @@ Satq::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { host: 'quotes.skyshaper.org', protocol: 'https' }
-  config.eager_load = true
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = {
+   :location => '/usr/sbin/sendmail',
+   :arguments => '-i'
+  }
+
+  config.eager_load = true  
 end
-
-ActionMailer::Base.delivery_method = :sendmail
-
