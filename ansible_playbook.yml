@@ -28,4 +28,4 @@
       command: "./bin/rake assets:precompile chdir={{target}}"
       environment: env
     - name: restart service
-      command: "svc -t {{service}}"
+      command: "/command/svc -t {{service}}"
