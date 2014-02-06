@@ -15,6 +15,7 @@ group :development do
   gem 'simplecov', platform: :mri
   gem 'brakeman', require: false
   gem 'spring'
+  gem 'minitest-reporters'
 end
 
 gem 'sass-rails'
