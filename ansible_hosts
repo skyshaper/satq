@@ -1,1 +1,0 @@
-satq.mxeyserv.mxey.net ansible_python_interpreter=/usr/local/bin/python target=/opt/satq ansible_ssh_host=mxey.net ansible_ssh_port=62205 path=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin
