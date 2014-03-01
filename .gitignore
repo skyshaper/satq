@@ -22,3 +22,5 @@
 /.vagrant
 /.idea
 /vagrant_ansible_inventory_default
+*.key
+*.crt
