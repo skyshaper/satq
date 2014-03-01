@@ -21,3 +21,4 @@
 /coverage
 /.vagrant
 /.idea
+/vagrant_ansible_inventory_default
