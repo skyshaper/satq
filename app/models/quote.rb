@@ -2,7 +2,7 @@ class Quote < ActiveRecord::Base
   has_many :lines, dependent: :destroy, autosave: true
   has_many :people, -> { uniq }, through: :lines
     
-  default_scope { order('created_at DESC') }
+  default_scope { order('id DESC') }
   
   audit :description, :raw_quote
   
