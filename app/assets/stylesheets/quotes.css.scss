@@ -6,6 +6,20 @@
 $font_family: 'Source Sans Pro';
 $monospace_font_family: 'Source Code Pro';
 
+//noinspection CssOverwrittenProperties
+@mixin enforce-line-breaks {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  /* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 * {
   font-family: $font_family;
   word-wrap: break-word;
@@ -100,6 +114,7 @@ h1 {
     @media screen and (min-width: 700px) {
       margin: 0.5em;
     }
+    @include enforce-line-breaks;
   }
 
   .lines td, .lines td a, textarea {
