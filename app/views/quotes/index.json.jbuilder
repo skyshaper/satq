@@ -1,3 +1,3 @@
-json.comments @quotes do |json, quote|
+json.comments @quotes do |quote|
   json.partial! quote
 end
