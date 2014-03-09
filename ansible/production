@@ -1,2 +1,2 @@
 [production]
-37.139.30.188 ansible_ssh_user=root
+quotes.skyshaper.org ansible_ssh_user=root
