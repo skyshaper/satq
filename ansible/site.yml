@@ -1,7 +1,0 @@
-- hosts: development
-  roles:
-    - rails_development
-- hosts: production
-  roles:
-    - { role: rails_production, application: satq, repo: 'https://github.com/skyshaper/satq.git' }
-    - { role: skyshaper_backup_database, database: satq, tags: ['backup'] }
