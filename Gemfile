@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-
-gem 'rails', '~> 4.0.0'
+gem 'rails', '~> 4.1.0'
 
 gem 'rails_autolink'
 gem 'auditable'
@@ -15,7 +14,6 @@ group :development do
   gem 'simplecov', platform: :mri
   gem 'brakeman', require: false
   gem 'spring'
-  gem 'minitest-reporters'
 end
 
 gem 'sass-rails'
