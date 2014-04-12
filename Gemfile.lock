@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 38e868dc79a6520306c5d581c46894839d0c5a7e
+  specs:
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,8 +44,6 @@ GEM
       activesupport (>= 3.0)
     awesome_print (1.2.0)
     bcrypt (3.1.7)
-    bcrypt-ruby (3.1.5)
-      bcrypt (>= 3.1.3)
     brakeman (2.4.1)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
@@ -57,12 +66,6 @@ GEM
     coffee-script-source (1.7.0)
     commands (0.2.1)
       rails (>= 3.2.0)
-    devise (3.2.3)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     devise_invitable (1.3.4)
       actionmailer (>= 3.2.6, < 5)
       devise (>= 3.2.0)
@@ -182,7 +185,7 @@ DEPENDENCIES
   brakeman
   coffee-rails
   commands
-  devise
+  devise!
   devise_invitable
   jbuilder
   jquery-rails
