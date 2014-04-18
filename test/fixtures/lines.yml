@@ -4,18 +4,22 @@ one:
   person: one
   quote: one
   body: MyText1
+  type: Message
 
 two:
   person: two
   quote: two
   body: MyText2
-  
+  type: Message
+
 auto_link:
   person: two
   quote: auto_link
   body: Check this out http://foo.de
+  type: Message
 
 issue13:
   person: two
   quote: issue13
   body: 'NONO, YOU GET THIS WRONG <_<'
+  type: Message

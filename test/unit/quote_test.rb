@@ -7,13 +7,14 @@ class QuoteTest < ActiveSupport::TestCase
     assert_equal 'Bar', quote.lines[0].body
     assert_equal 'bar', quote.lines[1].person.name
     assert_equal 'Spam', quote.lines[1].body
-    assert_equal false, quote.lines[0].action
+    assert_instance_of Message,quote.lines[0]
   end
 
   test "parse IRC format" do
     quote = Quote.new(raw_quote: "<foo>Bar\n* bar Spam")
     assert_quote quote
-    assert_equal true, quote.lines[1].action
+    assert_instance_of Message, quote.lines[0]
+    assert_instance_of Action, quote.lines[1]
     assert_equal "<foo> Bar\n* bar Spam", quote.raw_quote
   end
 
@@ -21,7 +22,8 @@ class QuoteTest < ActiveSupport::TestCase
   test "parse conversation format" do
     quote = Quote.new(raw_quote: "foo: Bar\nbar: Spam")
     assert_quote quote
-    assert_equal false, quote.lines[1].action
+    assert_instance_of Message, quote.lines[0]
+    assert_instance_of Message, quote.lines[1]
   end
 
   test "undelete" do
