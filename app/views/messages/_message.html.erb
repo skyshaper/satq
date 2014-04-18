@@ -1,0 +1,4 @@
+<tr class="message">
+  <td class="person"><%= link_to message.person.name, person_path(message.person.name) %></td>
+  <td class="body"><%= auto_link(html_escape(message.body)) %></td>
+</tr>
