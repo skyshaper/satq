@@ -207,6 +207,7 @@ DEPENDENCIES
   shelly-dependencies
   simplecov
   spring
+  thin
   turbolinks
   uglifier
   unicorn
