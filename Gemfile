@@ -16,6 +16,10 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'shelly-dependencies'
+end
+
 gem 'sass-rails'
 gem 'coffee-rails'
 
