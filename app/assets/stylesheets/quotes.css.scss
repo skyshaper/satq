@@ -18,11 +18,11 @@ $monospace_font_family: 'Source Code Pro';
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+  word-wrap: break-word;
 }
 
 * {
   font-family: $font_family;
-  word-wrap: break-word;
 }
 
 body {
