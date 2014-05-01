@@ -5,8 +5,8 @@ satq:
     - satq.shellyapp.com
   servers:
     app1:
-      size: large
-      thin: 4
+      size: small
+      thin: 2
       # delayed_job: 1
       # sidekiq: 1
       # clockwork: on
