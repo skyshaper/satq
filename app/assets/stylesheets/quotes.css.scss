@@ -126,9 +126,6 @@ h1 {
 
   .lines td, .lines td a, textarea {
     font-family: $monospace_font_family, monospace;
-  }
-
-  .lines td a {
     @include enforce-line-breaks;
   }
 
