@@ -17,7 +17,6 @@ group :development do
 end
 
 group :production do
-  gem 'thin'
   gem 'shelly-dependencies'
 end
 
@@ -42,5 +41,4 @@ gem 'jbuilder'
 
 gem 'devise', github: 'plataformatec/devise'
 gem 'devise_invitable'
-gem 'unicorn'
 gem 'commands'
