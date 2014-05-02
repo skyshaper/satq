@@ -8,12 +8,5 @@ satq:
     app1:
       size: small
       thin: 2
-      # delayed_job: 1
-      # sidekiq: 1
-      # clockwork: on
-      # whenever: on
-      # elasticsearch: on
       databases:
         - postgresql
-        # - mongodb
-        # - redis
