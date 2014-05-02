@@ -3,6 +3,7 @@ satq:
   environment: production # RAILS_ENV
   domains:
     - satq.shellyapp.com
+    - quotes.skyshaper.org
   servers:
     app1:
       size: small
