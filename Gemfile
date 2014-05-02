@@ -11,9 +11,13 @@ gem 'awesome_print'
 gem 'rake'
 
 group :development do
-  gem 'simplecov', platform: :mri
+  gem 'simplecov', platform: :mri, require: false
   gem 'brakeman', require: false
   gem 'spring'
+end
+
+group :production do
+  gem 'shelly-dependencies'
 end
 
 gem 'sass-rails'
@@ -37,5 +41,4 @@ gem 'jbuilder'
 
 gem 'devise', github: 'plataformatec/devise'
 gem 'devise_invitable'
-gem 'unicorn'
 gem 'commands'
