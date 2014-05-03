@@ -74,6 +74,11 @@ class QuotesControllerTest < ActionController::TestCase
     assert_match @quote.lines[0].body, @response.body
   end
 
+  test "search should strip search term" do
+    get :search, q: " " + @quote.lines[0].body + " "
+    assert_match @quote.lines[0].body, @response.body
+  end
+
   test "person should return quote" do
     get :person, person: @quote.people.first.name
     assert_response :success

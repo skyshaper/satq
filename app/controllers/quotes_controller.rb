@@ -29,7 +29,8 @@ class QuotesController < ApplicationController
   end
 
   def search
-    @quotes = Quote.search(params[:q])
+    @quotes = Quote.search(params[:q].strip)
+    @search_query = params[:q]
 
     respond_to do |format|
       format.html { render :index }
