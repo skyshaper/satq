@@ -16,9 +16,6 @@ group :development do
   gem 'spring'
 end
 
-group :production do
-  gem 'shelly-dependencies'
-end
 
 gem 'sass-rails'
 gem 'coffee-rails'
@@ -42,3 +39,5 @@ gem 'jbuilder'
 gem 'devise', github: 'plataformatec/devise'
 gem 'devise_invitable'
 gem 'commands'
+
+gem 'unicorn'
