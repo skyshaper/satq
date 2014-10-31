@@ -40,7 +40,7 @@ gem 'jbuilder'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise'
 gem 'devise_invitable'
 gem 'commands'
 
