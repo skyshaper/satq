@@ -204,7 +204,7 @@ DEPENDENCIES
   jquery-rails
   pg
   pry-rails
-  rails (~> 4.1.0)
+  rails (~> 4.1.7)
   rails_autolink
   rake
   sass-rails
