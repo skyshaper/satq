@@ -17,7 +17,6 @@ group :development do
   gem 'simplecov', platform: :mri, require: false
   gem 'brakeman', require: false
   gem 'spring'
-  gem 'capistrano-rails'
 end
 
 
