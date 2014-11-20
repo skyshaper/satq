@@ -1,5 +1,6 @@
 #!/bin/sh -eux
 bundle update
+bundle update rails # Workaround, otherwise bundler will not update rails?!
 if git diff --quiet --exit-code; then
     exit 0
 fi
