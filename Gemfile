@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.4'
 
-gem 'rails', '~> 4.1.7'
+gem 'rails', '~> 4.1.0'
 
 gem 'rails_autolink'
 gem 'auditable'
@@ -18,7 +18,7 @@ group :development do
 end
 
 
-gem 'sass-rails'
+gem 'sass-rails', '~> 4.0.3'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer'

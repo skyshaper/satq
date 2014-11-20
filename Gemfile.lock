@@ -151,9 +151,9 @@ DEPENDENCIES
   jquery-rails
   pg
   pry-rails
-  rails (~> 4.1.7)
+  rails (~> 4.1.0)
   rails_autolink
-  sass-rails
+  sass-rails (~> 4.0.3)
   simplecov
   spring
   turbolinks
