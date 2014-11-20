@@ -11,17 +11,14 @@ gem 'turbolinks'
 gem 'pg'
 gem 'pry-rails'
 gem 'awesome_print'
-gem 'rake'
 
 group :development do
   gem 'simplecov', platform: :mri, require: false
-  gem 'brakeman', require: false
   gem 'spring'
 end
 
 
 gem 'sass-rails'
-gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer'
@@ -43,4 +40,3 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'commands'
 
-gem 'unicorn'
