@@ -99,7 +99,7 @@ class QuotesControllerTest < ActionController::TestCase
 
   test "should handle HTML characteres properly (issue GH-13)" do
     get :show, id: quotes(:issue13)
-    assert_select '.body', 'NONO, YOU GET THIS WRONG &lt;_&lt;'
+    assert_select '.body', 'NONO, YOU GET THIS WRONG <_<'
   end
 
   test "should make links clickable" do
