@@ -17,5 +17,5 @@ test:
 production:
   adapter: postgresql
   database: satq
-  pool: 10
+  pool: 5
   timeout: 5000

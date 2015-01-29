@@ -40,4 +40,3 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'commands'
 
-gem 'puma'
