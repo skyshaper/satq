@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
-
 gem 'rails', '~> 4.2.0'
 
 gem 'rails_autolink'
@@ -15,6 +13,7 @@ gem 'awesome_print'
 group :development do
   gem 'simplecov', platform: :mri, require: false
   gem 'spring'
+  gem 'capistrano-rails'
 end
 
 
@@ -41,3 +40,5 @@ gem 'devise_invitable'
 gem 'commands'
 
 gem 'skylight'
+
+gem 'puma'
