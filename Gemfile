@@ -39,6 +39,4 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'commands'
 
-gem 'skylight'
-
 gem 'puma'
