@@ -8,7 +8,7 @@ Satq::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -32,8 +32,8 @@ Satq::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
-  # See everything in the log (default is :info)
-  # config.log_level = :info
+  # See everything in the log
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -67,5 +67,5 @@ Satq::Application.configure do
    :arguments => '-i'
   }
 
-  config.eager_load = true  
+  config.eager_load = true
 end
