@@ -7,4 +7,4 @@ fi
 git add -A
 git commit -m "Update dependencies"
 git push
-git push deploy master
+./bin/cap production deploy
